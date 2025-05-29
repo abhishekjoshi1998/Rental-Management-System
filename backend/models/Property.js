@@ -23,35 +23,35 @@ const PropertySchema = new mongoose.Schema({
     description: String,
     photos: [{
         fileName: String,
-        filePath: String, // URL or path
+        filePath: String,
         description: String,
         isPrimary: { type: Boolean, default: false }
     }],
-    amenities: [String], // e.g., ['pool', 'gym', 'parking']
+    amenities: [String],
     isAvailable: { type: Boolean, default: true },
     availableDate: Date,
     yearBuilt: Number,
     petPolicy: {
         allowed: { type: Boolean, default: false },
-        details: String, // e.g., "Small dogs under 20lbs, $50/month pet rent"
+        details: String,
         maxPets: Number,
-        weightLimit: Number, // in lbs or kg
+        weightLimit: Number,
         breedRestrictions: [String]
     },
     smokingPolicy: {
         allowed: { type: Boolean, default: false },
         details: String
     },
-    leaseTerms: String, // e.g., "12 months minimum"
+    leaseTerms: String,
     applicationFee: { type: Number, default: 0 },
-    utilitiesIncluded: [String], // e.g., ['water', 'trash']
+    utilitiesIncluded: [String],
     virtualTourUrl: String,
     status: {
         type: String,
         enum: ['active', 'inactive', 'pending_approval', 'rented', 'under_maintenance'],
         default: 'active'
     },
-    notes: String, // Internal notes for landlord/PM
+    notes: String,
     viewingInstructions: String,
 }, { timestamps: true });
 
@@ -61,5 +61,4 @@ PropertySchema.index({ landlord: 1 });
 PropertySchema.index({ propertyManager: 1 });
 
 
-const Property = mongoose.model('Property', PropertySchema);
-module.exports = Property;
+module.exports = mongoose.models.Property || mongoose.model('Property', PropertySchema);
