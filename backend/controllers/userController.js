@@ -1,5 +1,5 @@
 const User = require('../models/User');
-const Property = require('../models/Property');
+const Property = require('../models/property');
 const { getRedisClient } = require('../config/redisClient');
 const { encrypt, decrypt } = require('../services/encryptionService');
 const { createStripeCustomer } = require('../services/paymentGatewayService');

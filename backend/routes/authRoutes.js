@@ -7,7 +7,7 @@ const {
     resetPassword,
     checkAuth
 } = require('../controllers/authController');
-const { protect } = require('../middlewares/authMiddleware');
+const { protect } = require('../middleware/authMiddleware.js');
 
 const router = express.Router();
 

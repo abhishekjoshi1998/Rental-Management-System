@@ -1,5 +1,5 @@
 const AuditLog = require('../models/AuditLog');
-const logger = require('../utils/logger');
+const logger = require('../utills/logger');
 
 const auditLogMiddleware = async (req, res, next) => {
     const originalSend = res.send;
