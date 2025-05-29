@@ -1,4 +1,4 @@
-const logger = require('../utils/logger');
+const logger = require('../utills/logger');
 
 const initiateBackgroundCheck = async (applicantId, applicationDetails) => {
     logger.info(`Initiating background check for applicant: ${applicantId}`);

@@ -1,6 +1,6 @@
 const crypto = require('crypto');
 const config = require('../config');
-const logger = require('../utils/logger');
+const logger = require('../utills/logger');
 
 const ALGORITHM = 'aes-256-cbc';
 const KEY = Buffer.from(config.encryptionKey, 'hex'); // Must be 32 bytes for aes-256

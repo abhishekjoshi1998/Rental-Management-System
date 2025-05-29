@@ -1,12 +1,12 @@
-const logger = require('../utils/logger');
+const logger = require('../utills/logger');
 const { v4: uuidv4 } = require('uuid');
 
 const requestSignature = async (documentId, signerEmail, leaseDetails) => {
     logger.info(`Requesting digital signature for document ${documentId} from ${signerEmail}`);
     // Placeholder for third-party e-signature API (e.g., DocuSign, HelloSign)
-    // const response = await fetch('https://api.esignservice.com/send_for_signature', { ... });
-    // const data = await response.json();
-    // return data.envelopeId;
+    const response = await fetch('https://api.esignservice.com/send_for_signature', { ... });
+    const data = await response.json();
+    return data.envelopeId;
 
     // Mock response
     await new Promise(resolve => setTimeout(resolve, 500));

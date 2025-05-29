@@ -1,6 +1,6 @@
 const Stripe = require('stripe');
 const config = require('../config');
-const logger = require('../utils/logger');
+const logger = require('../utills/logger');
 
 const stripe = Stripe(config.stripeSecretKey);
 

@@ -3,7 +3,7 @@ const express = require('express');
 const cors = require('cors');
 const helmet = require('helmet');
 const morgan = require('morgan');
-const bodyParser = require('body-parser');
+const path = require('path');
 
 const connectDB = require('./config/db');
 const { connectRedis } = require('./config/redisClient');
@@ -23,10 +23,27 @@ const app = express();
 connectDB();
 connectRedis();
 
-app.use(cors());
+const allowedOrigins = [process.env.CLIENT_URL || 'http://localhost:3000'];
+if (process.env.NODE_ENV === 'development' && process.env.ADDITIONAL_DEV_CLIENT_URL) {
+    allowedOrigins.push(process.env.ADDITIONAL_DEV_CLIENT_URL);
+}
+
+const corsOptions = {
+    origin: function (origin, callback) {
+        if (!origin || allowedOrigins.indexOf(origin) !== -1) {
+            callback(null, true);
+        } else {
+            callback(new Error('Not allowed by CORS'));
+        }
+    },
+    credentials: true,
+};
+app.use(cors(corsOptions));
+
 app.use(helmet());
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+
+app.use(express.json({ limit: '10mb' }));
+app.use(express.urlencoded({ limit: '10mb', extended: true }));
 
 if (process.env.NODE_ENV === 'development') {
     app.use(morgan('dev'));
@@ -43,6 +60,8 @@ app.use('/api/payments', rentPaymentRoutes);
 app.use('/api/leases', leaseAgreementRoutes);
 app.use('/api/maintenance-requests', maintenanceRequestRoutes);
 
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+
 app.get('/', (req, res) => {
     res.send('Rental Management System API is running...');
 });
@@ -56,12 +75,19 @@ const server = app.listen(PORT, () => {
 });
 
 process.on('unhandledRejection', (err, promise) => {
-    logger.error(`Unhandled Rejection: ${err.message}`);
-    server.close(() => process.exit(1));
+    logger.error(`Unhandled Rejection: ${err.message}`, { error: err });
 });
 
 process.on('SIGTERM', () => {
     logger.info('SIGTERM signal received. Closing http server.');
+    server.close(() => {
+        logger.info('Http server closed.');
+        process.exit(0);
+    });
+});
+
+process.on('SIGINT', () => {
+    logger.info('SIGINT signal received. Closing http server.');
     server.close(() => {
         logger.info('Http server closed.');
         process.exit(0);
