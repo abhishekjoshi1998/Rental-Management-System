@@ -14,7 +14,7 @@ const router = express.Router();
 router.post('/register', registerUser);
 router.post('/login', loginUser);
 router.get('/me', protect, getMe);
-router.get('/check', protect, checkAuth); // To check if user is still authenticated on frontend
+router.get('/check', protect, checkAuth); 
 router.post('/forgotpassword', forgotPassword);
 router.put('/resetpassword/:resetToken', resetPassword);
 

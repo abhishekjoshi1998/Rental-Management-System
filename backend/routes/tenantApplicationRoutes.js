@@ -9,8 +9,8 @@ const {
     initiateApplicationBackgroundCheck,
     getApplicationBackgroundCheckStatus
 } = require('../controllers/tenantApplicationController');
-const { protect, authorize } = require('../middlewares/authMiddleware');
-const upload = require('../middlewares/uploadMiddleware');
+const { protect, authorize } = require('../middleware/authMiddleware');
+const upload = require('../middleware/uploadMiddleware');
 
 const router = express.Router();
 

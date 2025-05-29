@@ -8,7 +8,7 @@ const {
     deleteUserById,
     changeUserRole,
     toggleUserActiveStatus,
-    createStripeCustomerPortal // Assuming you added this to userController
+    createStripeCustomerPortal
 } = require('../controllers/userController');
 const { protect, authorize } = require('../middleware/authMiddleware'); 
 const upload = require('../middleware/uploadMiddleware'); 

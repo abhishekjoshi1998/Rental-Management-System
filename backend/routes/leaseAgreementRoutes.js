@@ -11,7 +11,7 @@ const {
     terminateLease,
     deleteLeaseAgreement
 } = require('../controllers/leaseAgreementController');
-const { protect, authorize } = require('../middlewares/authMiddleware');
+const { protect, authorize } = require('../middleware/authMiddleware');
 
 const router = express.Router();
 

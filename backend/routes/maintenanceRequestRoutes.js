@@ -8,8 +8,8 @@ const {
     deleteMaintenanceRequestPhoto,
     addFeedbackToMaintenanceRequest
 } = require('../controllers/maintenanceRequestController');
-const { protect, authorize } = require('../middlewares/authMiddleware');
-const upload = require('../middlewares/uploadMiddleware');
+const { protect, authorize } = require('../middleware/authMiddleware');
+const upload = require('../middleware/uploadMiddleware');
 
 const router = express.Router();
 

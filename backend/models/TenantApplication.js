@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const { encrypt, decrypt } = require('../services/encryptionService'); // Make sure this path is correct
+const { encrypt, decrypt } = require('../services/encryptionService'); 
 
 const TenantApplicationSchema = new mongoose.Schema({
     applicant: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },

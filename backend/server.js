@@ -16,7 +16,7 @@ const tenantApplicationRoutes = require('./routes/tenantApplicationRoutes');
 const rentPaymentRoutes = require('./routes/rentPaymentRoutes');
 const leaseAgreementRoutes = require('./routes/leaseAgreementRoutes');
 const maintenanceRequestRoutes = require('./routes/maintenanceRequestRoutes');
-const { auditLogMiddleware } = require('./middlewares/auditLogMiddleware');
+const { auditLogMiddleware } = require('./middleware/auditLogMiddleware');
 
 const app = express();
 
