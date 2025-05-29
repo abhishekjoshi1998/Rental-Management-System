@@ -10,11 +10,11 @@ const MaintenanceRequestSchema = new mongoose.Schema({
     status: { type: String, enum: ['submitted', 'received', 'in_progress', 'assigned', 'on_hold', 'completed', 'cancelled'], default: 'submitted' },
     photos: [{
         fileName: String,
-        filePath: String, // URL or path
+        filePath: String, 
     }],
     preferredAvailability: String,
-    assignedTo: { type: mongoose.Schema.Types.ObjectId, ref: 'User' }, // Could be a landlord, PM, or service provider user
-    serviceProvider: { // Or a dedicated service provider entity if more complex
+    assignedTo: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
+    serviceProvider: { 
         name: String,
         contact: String,
     },
