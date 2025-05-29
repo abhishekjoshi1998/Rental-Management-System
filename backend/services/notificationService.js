@@ -5,13 +5,13 @@ const logger = require('../utils/logger');
 const transporter = nodemailer.createTransport({
     host: config.emailHost,
     port: config.emailPort,
-    secure: config.emailPort === 465, // true for 465, false for other ports
+    secure: config.emailPort === 465, 
     auth: {
         user: config.emailUser,
         pass: config.emailPass,
     },
     tls: {
-        // do not fail on invalid certs for local development with self-signed certs
+      
         rejectUnauthorized: process.env.NODE_ENV === 'production' 
     }
 });
