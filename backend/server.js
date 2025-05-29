@@ -7,8 +7,8 @@ const bodyParser = require('body-parser');
 
 const connectDB = require('./config/db');
 const { connectRedis } = require('./config/redisClient');
-const errorHandler = require('./middlewares/errorHandler');
-const logger = require('./utils/logger');
+const errorHandler = require('./middleware/errorHandler');
+const logger = require('./utills/logger');
 
 const authRoutes = require('./routes/authRoutes');
 const userRoutes = require('./routes/userRoutes');

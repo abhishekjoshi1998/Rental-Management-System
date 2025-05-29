@@ -1,7 +1,7 @@
 const User = require('../models/User');
 const jwt = require('jsonwebtoken');
 const config = require('../config');
-const logger = '..//utils/logger';
+const logger = '..//utills/logger';
 const { createStripeCustomer } = require('../services/paymentGatewayService');
 const crypto = require('crypto');
 const { sendEmail } = require('../services/notificationService');
