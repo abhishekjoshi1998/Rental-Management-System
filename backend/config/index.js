@@ -1,0 +1,17 @@
+module.exports = {
+    jwtSecret: process.env.JWT_SECRET,
+    jwtExpiresIn: process.env.JWT_EXPIRES_IN,
+    mongoURI: process.env.MONGO_URI,
+    port: process.env.PORT,
+    nodeEnv: process.env.NODE_ENV,
+    redisHost: process.env.REDIS_HOST,
+    redisPort: process.env.REDIS_PORT,
+    stripeSecretKey: process.env.STRIPE_SECRET_KEY,
+    emailHost: process.env.EMAIL_HOST,
+    emailPort: process.env.EMAIL_PORT,
+    emailUser: process.env.EMAIL_USER,
+    emailPass: process.env.EMAIL_PASS,
+    emailFrom: process.env.EMAIL_FROM,
+    encryptionKey: process.env.ENCRYPTION_KEY,
+    encryptionIV: process.env.ENCRYPTION_IV,
+};
