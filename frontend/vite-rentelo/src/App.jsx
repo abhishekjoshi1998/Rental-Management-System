@@ -4,10 +4,10 @@ import MainLayout from "./components/Layout/MainLayout";
 import PrivateRoute from "./components/Common/PrivateRoute";
 
 import HomePage from "./pages/HomePage";
-import LoginPage from "./pages/Auth/LoginPage";
-import RegisterPage from "./pages/Auth/RegisterPage";
-import ForgotPasswordPage from "./pages/Auth/ForgotPasswordPage"; 
-import ResetPasswordPage from "./pages/Auth/ResetPasswordPage"; 
+import LoginPage from "./components/Auth/LoginPage";
+import RegisterPage from "./components/Auth/RegisterForm";
+import ForgotPasswordPage from "./components/Auth/ForgotPasswordPage"; 
+import ResetPasswordPage from "./components/Auth/ResetPasswordPage"; 
 
 import DashboardPage from "./pages/DashboardPage";
 import ProfilePage from "./pages/ProfilePage";
