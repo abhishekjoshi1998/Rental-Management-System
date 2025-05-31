@@ -1,3 +1,4 @@
+// src/pages/Auth/ForgotPasswordPage.js
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { forgotPasswordRequest } from '../../api/authService';
