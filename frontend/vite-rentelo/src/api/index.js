@@ -24,7 +24,7 @@ api.interceptors.response.use(
       // Handle unauthorized access, e.g., redirect to login
       localStorage.removeItem('token');
       localStorage.removeItem('user');
-      // window.location.href = '/login'; // Consider using react-router's navigate for better UX
+      
       console.error("Unauthorized access - 401");
     }
     return Promise.reject(error);
