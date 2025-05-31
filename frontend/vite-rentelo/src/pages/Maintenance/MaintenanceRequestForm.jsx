@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { submitNewMaintenanceRequest } from '../../api/maintenanceService';
-import AlertMessage from '../Common/AlertMessage';
+import AlertMessage from '../../components/Common/AlertMessage';
 
 const MaintenanceRequestForm = ({ propertyId, leaseId }) => {
   const [formData, setFormData] = useState({

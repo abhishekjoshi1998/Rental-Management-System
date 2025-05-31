@@ -1,7 +1,7 @@
-// src/pages/HomePage.js
+
 import React from 'react';
 import { Link } from 'react-router-dom';
-import useAuth from '../hooks/useAuth'; // Optional: to customize view based on auth state
+import useAuth from '../components/hooks/useAuth'; 
 
 const HomePage = () => {
   const { isAuthenticated, user } = useAuth();

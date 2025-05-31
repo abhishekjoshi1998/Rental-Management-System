@@ -1,7 +1,7 @@
 // src/components/Payments/PaymentForm.js
 import React, { useState } from 'react';
 import { PaymentElement, useStripe, useElements } from '@stripe/react-stripe-js';
-import AlertMessage from '../Common/AlertMessage';
+import AlertMessage from '../../components/Common/AlertMessage';
 
 const PaymentForm = ({ clientSecret, paymentId, amount }) => {
   const stripe = useStripe();

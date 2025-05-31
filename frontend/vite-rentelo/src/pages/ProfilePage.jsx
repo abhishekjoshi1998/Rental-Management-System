@@ -1,6 +1,6 @@
 // src/pages/ProfilePage.js
 import React, { useState, useEffect } from 'react';
-import useAuth from '../hooks/useAuth';
+import useAuth from '../components/hooks/useAuth';
 import { getProfile, updateUserProfile } from '../api/authService';
 import AlertMessage from '../components/Common/AlertMessage';
 import LoadingSpinner from '../components/Common/LoadingSpinner';
@@ -152,14 +152,8 @@ const ProfilePage = () => {
 
     setPasswordUpdating(true);
     try {
-      // This API endpoint doesn't exist in the backend yet, you'd need to create it.
-      // For example: await api.put('/users/profile/change-password', { currentPassword, newPassword });
       setPasswordSuccess('Password change functionality not yet implemented in backend.');
-      // After successful backend implementation:
-      // setPasswordSuccess('Password updated successfully!');
-      // setCurrentPassword('');
-      // setNewPassword('');
-      // setConfirmNewPassword('');
+     
     } catch (err) {
       setPasswordError(err.response?.data?.message || 'Failed to update password.');
     } finally {

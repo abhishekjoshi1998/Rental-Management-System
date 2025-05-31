@@ -1,9 +1,8 @@
 // src/pages/DashboardPage.js
 import React from 'react';
 import { Link } from 'react-router-dom';
-import useAuth from '../hooks/useAuth';
-import AlertMessage from '../components/Common/AlertMessage'; // For potential messages
-
+import useAuth from '../components/hooks/useAuth';
+import AlertMessage from '../components/Common/AlertMessage'; 
 const DashboardPage = () => {
   const { user } = useAuth();
 
