@@ -1,22 +1,20 @@
-// src/pages/Properties/PropertiesListPage.jsx
 import React, { useState, useEffect } from 'react';
-import { getProperties } from '../../api/propertyService.js'; // Ensure this path is correct
-import PropertyListItem from '../../components/Properties/PropertyListItem.jsx'; // Ensure this path and extension are correct
-import LoadingSpinner from '../../components/Common/LoadingSpinner.jsx'; // Ensure this path and extension are correct
-import AlertMessage from '../../components/Common/AlertMessage.jsx'; // Ensure this path and extension are correct
+import { getProperties } from '../../api/propertyService.js'; 
+import PropertyListItem from '../../components/Properties/PropertyListItem.jsx';
+import LoadingSpinner from '../../components/Common/LoadingSpinner.jsx'; 
+import AlertMessage from '../../components/Common/AlertMessage.jsx';
 
 const PropertiesListPage = () => {
-  const [properties, setProperties] = useState([]); // Initialize as an empty array
+  const [properties, setProperties] = useState([]); 
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
-  const [page, setPage] = useState(1); // For pagination (if backend supports)
-  const [totalPages, setTotalPages] = useState(1); // For pagination
+  const [page, setPage] = useState(1); 
+  const [totalPages, setTotalPages] = useState(1); 
 
   const fetchProperties = async (currentPage = 1) => {
     setLoading(true);
     setError('');
     try {
-      // Pass pagination params if your backend supports them
       const params = { isAvailable: true, page: currentPage, limit: 10 };
       const responseData = await getProperties(params);
 
@@ -25,15 +23,15 @@ const PropertiesListPage = () => {
 
       let propertiesArray = [];
       if (responseData && Array.isArray(responseData.properties)) {
-        // Common structure: { properties: [], ... }
+        
         propertiesArray = responseData.properties;
         if (responseData.totalPages) setTotalPages(responseData.totalPages);
         if (responseData.currentPage) setPage(responseData.currentPage);
       } else if (responseData && Array.isArray(responseData.data)) {
-        // Another common structure: { data: [], ... }
+        
         propertiesArray = responseData.data;
         if (responseData.totalPages) setTotalPages(responseData.totalPages);
-        // Adjust if currentPage is named differently or not present
+        
       } else if (Array.isArray(responseData)) {
         // API returns an array directly
         propertiesArray = responseData;
@@ -41,14 +39,14 @@ const PropertiesListPage = () => {
         // Unexpected format
         console.error("Properties data received is not in a recognized array format:", responseData);
         setError('Received invalid data format for properties. Displaying no properties.');
-        propertiesArray = []; // Default to empty array
+        propertiesArray = []; 
       }
       setProperties(propertiesArray);
 
     } catch (err) {
       console.error("Failed to fetch properties:", err);
       setError(err.response?.data?.message || 'Failed to fetch properties. Please try again later.');
-      setProperties([]); // Ensure properties is an array even on error
+      setProperties([]); 
     } finally {
       setLoading(false);
     }
@@ -72,7 +70,7 @@ const PropertiesListPage = () => {
   };
 
 
-  if (loading && properties.length === 0) { // Show loader only on initial load or when properties are empty
+  if (loading && properties.length === 0) { 
     return <LoadingSpinner />;
   }
 
