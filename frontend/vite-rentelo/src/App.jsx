@@ -6,8 +6,8 @@ import PrivateRoute from "./components/Common/PrivateRoute";
 import HomePage from "./pages/HomePage";
 import LoginPage from "./pages/Auth/LoginPage";
 import RegisterPage from "./pages/Auth/RegisterPage";
-import ForgotPasswordPage from "./pages/Auth/ForgotPasswordPage"; // Create this
-import ResetPasswordPage from "./pages/Auth/ResetPasswordPage"; // Create this
+import ForgotPasswordPage from "./pages/Auth/ForgotPasswordPage"; 
+import ResetPasswordPage from "./pages/Auth/ResetPasswordPage"; 
 
 import DashboardPage from "./pages/DashboardPage";
 import ProfilePage from "./pages/ProfilePage";
