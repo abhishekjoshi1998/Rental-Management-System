@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import { getLeaseDetails, terminateLease, renewLease, requestLeaseSignatureApi } from '../../api/leaseService';
 import useAuth from '../../hooks/useAuth';
-import LoadingSpinner from '../../components/Common/LoadingSpinner';
+import LoadingSpinner from '../Common/LoadingSpinner';
 import AlertMessage from '../../components/Common/AlertMessage';
 
 const LeaseDetailPage = () => {

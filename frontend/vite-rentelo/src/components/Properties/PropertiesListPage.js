@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from 'react';
-import { getProperties } from '../../api/propertyService';
-import PropertyListItem from '../../components/Properties/PropertyListItem';
-import LoadingSpinner from '../../components/Common/LoadingSpinner';
-import AlertMessage from '../../components/Common/AlertMessage';
+import React, { useState, useEffect } from "react";
+import { getProperties } from "../../api/propertyService";
+import PropertyListItem from "../../components/Properties/PropertyListItem";
+import LoadingSpinner from "../Common/LoadingSpinner";
+import AlertMessage from "../../components/Common/AlertMessage";
 
 const PropertiesListPage = () => {
   const [properties, setProperties] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
 
   useEffect(() => {
     const fetchProperties = async () => {
@@ -15,7 +15,7 @@ const PropertiesListPage = () => {
         const response = await getProperties({ isAvailable: true }); // Fetch only available
         setProperties(response.data.properties || response.data);
       } catch (err) {
-        setError('Failed to fetch properties.');
+        setError("Failed to fetch properties.");
       } finally {
         setLoading(false);
       }
@@ -33,7 +33,7 @@ const PropertiesListPage = () => {
         <p>No properties currently available.</p>
       ) : (
         <div className="properties-grid">
-          {properties.map(prop => (
+          {properties.map((prop) => (
             <PropertyListItem key={prop._id} property={prop} />
           ))}
         </div>
