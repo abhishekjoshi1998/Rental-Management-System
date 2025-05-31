@@ -5,7 +5,7 @@ import PrivateRoute from "./components/Common/PrivateRoute";
 
 import HomePage from "./pages/HomePage";
 import LoginPage from "./components/Auth/LoginPage";
-import RegisterPage from "./components/Auth/RegisterForm";
+//import RegisterPage from "./components/Auth/RegisterForm";
 import ForgotPasswordPage from "./components/Auth/ForgotPasswordPage"; 
 import ResetPasswordPage from "./components/Auth/ResetPasswordPage"; 
 
@@ -14,8 +14,6 @@ import ProfilePage from "./pages/ProfilePage";
 
 import PropertiesListPage from "./components/Properties/PropertiesListPage";
 import PropertyDetailPage from "./components/Properties/PropertyDetailPage";
-// import ManagePropertiesPage from './pages/Properties/ManagePropertiesPage'; // For landlord
-// import CreatePropertyPage from './pages/Properties/CreatePropertyPage'; // For landlord
 
 import SubmitApplicationPage from "./components/Applications/SubmitApplicationPage";
 import ApplicationsListPage from "./components/Applications/ApplicationListItem";
