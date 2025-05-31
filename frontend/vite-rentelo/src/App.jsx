@@ -18,7 +18,7 @@ import PropertyDetailPage from "./components/Properties/PropertyDetailPage";
 // import CreatePropertyPage from './pages/Properties/CreatePropertyPage'; // For landlord
 
 import SubmitApplicationPage from "./components/Applications/SubmitApplicationPage";
-import ApplicationsListPage from "./components/Applications/ApplicationsListPage";
+import ApplicationsListPage from "./components/Applications/ApplicationListItem";
 import ApplicationDetailPage from "./components/Applications/ApplicationDetailPage";
 
 import MakePaymentPage from "./pages/Payments/MakePaymentPage";
@@ -35,7 +35,7 @@ import MaintenanceRequestDetailPage from "./pages/Maintenance/MaintenanceRequest
 import NotFoundPage from "./pages/NotFoundPage";
 import UnauthorizedPage from "./pages/UnauthorizedPage";
 
-import useAuth from "./hooks/useAuth";
+import useAuth from "./components/hooks/useAuth";
 import LoadingSpinner from "./components/Common/LoadingSpinner";
 
 function App() {

@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { createLease } from '../../api/leaseService';
-import AlertMessage from '../../components/Common/AlertMessage';
+import AlertMessage from '../Common/AlertMessage';
 
 const CreateLeasePage = () => {
   const navigate = useNavigate();

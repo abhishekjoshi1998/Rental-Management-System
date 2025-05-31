@@ -3,7 +3,7 @@ import { useParams, useNavigate, Link } from 'react-router-dom';
 import { getLeaseDetails, terminateLease, renewLease, requestLeaseSignatureApi } from '../../api/leaseService';
 import useAuth from '../../hooks/useAuth';
 import LoadingSpinner from '../Common/LoadingSpinner';
-import AlertMessage from '../../components/Common/AlertMessage';
+import AlertMessage from '../Common/AlertMessage';
 
 const LeaseDetailPage = () => {
   const { id } = useParams();
