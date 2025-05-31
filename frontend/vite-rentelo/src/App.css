@@ -118,3 +118,71 @@ form button:hover {
 .card h3 {
   margin-top: 0;
 }
+
+/* Add to App.css */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #333;
+  color: #fff;
+  padding: 0.5rem 2rem; /* Adjusted padding */
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 10px; /* Reduced margin */
+  font-size: 1rem;
+}
+
+nav .nav-brand a {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-left: 0;
+}
+
+.nav-links-main {
+  flex-grow: 1;
+  text-align: center; /* Or left, depending on design */
+}
+
+.auth-links {
+  display: flex;
+  align-items: center;
+}
+
+.auth-links button {
+  background: #555;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-left: 15px;
+  padding: 8px 12px;
+  border-radius: 3px;
+}
+.auth-links button:hover {
+  background: #777;
+}
+
+/* Add to App.css if not already there */
+.info-message {
+  color: #00529B;
+  background-color: #BDE5F8;
+  padding: 10px;
+  border: 1px solid #00529B;
+  border-radius: 3px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.warning-message {
+  color: #9F6000;
+  background-color: #FEEFB3;
+  padding: 10px;
+  border: 1px solid #9F6000;
+  border-radius: 3px;
+  margin-bottom: 10px;
+  text-align: center;
+}
