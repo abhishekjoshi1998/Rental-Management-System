@@ -1,4 +1,3 @@
-// src/api/authService.js
 import api from './index';
 
 export const loginUser = (credentials) => {
@@ -10,11 +9,10 @@ export const registerUser = (userData) => {
 };
 
 export const getProfile = () => {
-  return api.get('/auth/me'); // Or /users/profile depending on your backend
+  return api.get('/auth/me');
 };
 
 export const updateUserProfile = (profileData) => {
-    // For FormData if profilePicture is a file
     if (profileData instanceof FormData) {
         return api.put('/users/profile', profileData, {
             headers: {
@@ -25,3 +23,10 @@ export const updateUserProfile = (profileData) => {
     return api.put('/users/profile', profileData);
 };
 
+export const forgotPasswordRequest = (email) => {
+    return api.post('/auth/forgotpassword', { email });
+};
+
+export const resetPasswordRequest = (token, password) => {
+    return api.put(`/auth/resetpassword/${token}`, { password });
+};
