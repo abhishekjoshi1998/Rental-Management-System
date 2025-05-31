@@ -1,5 +1,5 @@
 import React from 'react';
-import ApplicationForm from '../../components/Applications/ApplicationForm';
+import ApplicationForm from '../../components/Applications/ApplicationForm'
 import { useLocation, Navigate } from 'react-router-dom';
 
 const SubmitApplicationPage = () => {

@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { loadStripe } from '@stripe/stripe-js';
 import { Elements } from '@stripe/react-stripe-js';
-import PaymentForm from '../../components/Payments/PaymentForm'; // You'll create this
+import PaymentForm from './PaymentForm'; // You'll create this
 import api from '../../api'; // Or paymentService.js
 import AlertMessage from '../../components/Common/AlertMessage';
 
@@ -16,17 +16,14 @@ const MakePaymentPage = () => {
   const [amount, setAmount] = useState(0); // Get this from lease details
 
   useEffect(() => {
-    // Fetch active lease and amount for the logged-in tenant
-    // For simplicity, let's assume these are set
-    // e.g., setLeaseId('someLeaseIdFromContext'); setAmount(1000);
 
     if (leaseId && amount > 0) {
       const createPaymentIntent = async () => {
         try {
-          // Replace with your actual payment service call
+         
           const response = await api.post('/payments/initiate', {
-            leaseId: leaseId, // Example leaseId
-            amount: amount, // Example amount
+            leaseId: leaseId,
+            amount: amount,
           });
           setClientSecret(response.data.clientSecret);
           setPaymentId(response.data.paymentId);

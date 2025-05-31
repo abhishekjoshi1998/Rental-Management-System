@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import MaintenanceRequestForm from '../../components/Maintenance/MaintenanceRequestForm';
-import useAuth from '../../hooks/useAuth';
-import { getLeases } from '../../api/leaseService'; // To find active lease
+import MaintenanceRequestForm from '../../pages/Maintenance/MaintenanceRequestForm';
+import useAuth from '../../components/hooks/useAuth';
+import { getLeases } from '../../api/leaseService'; 
 import LoadingSpinner from '../../components/Common/LoadingSpinner';
 import AlertMessage from '../../components/Common/AlertMessage';
 

@@ -5,7 +5,7 @@ import {
   updateApplicationStatus,
   initiateBackgroundCheckForApp,
 } from "../../api/applicationService";
-import useAuth from "../../hooks/useAuth";
+import useAuth from "../hooks/useAuth";
 import LoadingSpinner from "../Common/LoadingSpinner";
 import AlertMessage from "../Common/AlertMessage";
 

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import { getLeaseDetails, terminateLease, renewLease, requestLeaseSignatureApi } from '../../api/leaseService';
-import useAuth from '../../hooks/useAuth';
+import useAuth from '../hooks/useAuth.js';
 import LoadingSpinner from '../../components/Common/LoadingSpinner.jsx';
 import AlertMessage from '../../components/Common/AlertMessage.jsx';
 

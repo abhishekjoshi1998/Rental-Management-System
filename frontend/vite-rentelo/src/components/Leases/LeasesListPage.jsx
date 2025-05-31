@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { getLeases } from "../../api/leaseService";
-import useAuth from "../../hooks/useAuth";
+import useAuth from "../hooks/useAuth";
 import LeaseListItem from "./LeaseListItem";
 import LoadingSpinner from "../Common/LoadingSpinner";
 import AlertMessage from "../Common/AlertMessage";

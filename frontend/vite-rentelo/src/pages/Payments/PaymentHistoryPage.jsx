@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { getPaymentHistory } from '../../api/paymentService';
-import useAuth from '../../hooks/useAuth';
+import useAuth from '../../components/hooks/useAuth';
 import LoadingSpinner from '../../components/Common/LoadingSpinner';
 import AlertMessage from '../../components/Common/AlertMessage';
 import { Link } from 'react-router-dom';
