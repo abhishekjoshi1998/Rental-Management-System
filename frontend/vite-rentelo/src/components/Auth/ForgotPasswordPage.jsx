@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { forgotPasswordRequest } from '../../api/authService';
-import AlertMessage from '../../components/Common/AlertMessage';
+import AlertMessage from '../Common/AlertMessage';
 
 const ForgotPasswordPage = () => {
   const [email, setEmail] = useState('');

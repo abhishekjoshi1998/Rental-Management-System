@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { getProperties } from "../../api/propertyService";
-import PropertyListItem from "../../components/Properties/PropertyListItem";
+import PropertyListItem from "./PropertyListItem";
 import LoadingSpinner from "../Common/LoadingSpinner";
-import AlertMessage from "../../components/Common/AlertMessage";
+import AlertMessage from "../Common/AlertMessage";
 
 const PropertiesListPage = () => {
   const [properties, setProperties] = useState([]);

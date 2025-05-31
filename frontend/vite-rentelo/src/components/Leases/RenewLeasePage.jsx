@@ -2,8 +2,8 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { getLeaseDetails, renewLease } from '../../api/leaseService';
-import AlertMessage from '../../components/Common/AlertMessage';
-import LoadingSpinner from '../../components/Common/LoadingSpinner';
+import AlertMessage from '../Common/AlertMessage';
+import LoadingSpinner from '../Common/LoadingSpinner';
 
 const RenewLeasePage = () => {
   const { id: originalLeaseId } = useParams();

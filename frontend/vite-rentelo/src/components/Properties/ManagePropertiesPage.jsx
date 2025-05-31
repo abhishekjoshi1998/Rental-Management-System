@@ -3,8 +3,8 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { getProperties, deleteProperty } from '../../api/propertyService'; // Assuming getProperties can filter by landlord
 import useAuth from '../../hooks/useAuth';
-import LoadingSpinner from '../../components/Common/LoadingSpinner';
-import AlertMessage from '../../components/Common/AlertMessage';
+import LoadingSpinner from '../Common/LoadingSpinner';
+import AlertMessage from '../Common/AlertMessage';
 
 const ManagePropertiesPage = () => {
   const [properties, setProperties] = useState([]);

@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import { resetPasswordRequest } from '../../api/authService';
-import AlertMessage from '../../components/Common/AlertMessage';
+import AlertMessage from '../Common/AlertMessage';
 
 const ResetPasswordPage = () => {
   const { token } = useParams();

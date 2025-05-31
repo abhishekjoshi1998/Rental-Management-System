@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { getPropertyById } from "../../api/propertyService";
 import LoadingSpinner from "../Common/LoadingSpinner";
-import AlertMessage from "../../components/Common/AlertMessage";
+import AlertMessage from "../Common/AlertMessage";
 
 const PropertyDetailPage = () => {
   const { id } = useParams();

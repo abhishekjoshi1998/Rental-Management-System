@@ -7,7 +7,7 @@ import {
 } from "../../api/applicationService";
 import useAuth from "../../hooks/useAuth";
 import LoadingSpinner from "../Common/LoadingSpinner";
-import AlertMessage from "../../components/Common/AlertMessage";
+import AlertMessage from "../Common/AlertMessage";
 
 const ApplicationDetailPage = () => {
   const { id } = useParams();

@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { createProperty } from '../../api/propertyService';
-import AlertMessage from '../../components/Common/AlertMessage';
+import AlertMessage from '../Common/AlertMessage';
 
 const CreatePropertyPage = () => {
   const navigate = useNavigate();
