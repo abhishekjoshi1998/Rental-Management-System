@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { getMaintenanceRequestDetails, updateMaintenanceRequestStatus, addMaintenanceFeedback } from '../../api/maintenanceService';
-import useAuth from '../../hooks/useAuth';
+import useAuth from '../../components/hooks/useAuth';
 import LoadingSpinner from '../../components/Common/LoadingSpinner';
 import AlertMessage from '../../components/Common/AlertMessage';
 

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { getMaintenanceRequests } from '../../api/maintenanceService';
-import useAuth from '../../hooks/useAuth';
+import useAuth from '../../components/hooks/useAuth';
 import MaintenanceRequestListItem from '../../components/Maintenance/MaintenanceRequestListItem';
 import LoadingSpinner from '../../components/Common/LoadingSpinner';
 import AlertMessage from '../../components/Common/AlertMessage';
