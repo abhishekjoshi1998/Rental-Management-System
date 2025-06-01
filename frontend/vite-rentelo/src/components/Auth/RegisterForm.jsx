@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import useAuth from '../hooks/useAuth.js';
-import AlertMessage from '../Common/AlertMessage.jsx'; // Correct path: up from Auth, into Common
+import AlertMessage from '../Common/AlertMessage.jsx'; 
 
 const RegisterForm = () => {
   const [formData, setFormData] = useState({

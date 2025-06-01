@@ -32,7 +32,6 @@ const ApplicationDetailPage = () => {
       setLoading(false);
     }
   };
-
   useEffect(() => {
     if (id) {
       fetchApplication();

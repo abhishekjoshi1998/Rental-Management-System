@@ -1,4 +1,4 @@
-// src/pages/Auth/ResetPasswordPage.js
+
 import React, { useState } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import { resetPasswordRequest } from '../../api/authService';
