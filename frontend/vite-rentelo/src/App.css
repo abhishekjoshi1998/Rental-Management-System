@@ -1,150 +1,100 @@
-body {
-  font-family: sans-serif;
+/* === Global Resets & Base Styles === */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  background-color: #f4f4f4;
-  color: #333;
+}
+
+body {
+  font-family: 'Roboto', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f8f9fa; /* Lighter background */
+  color: #343a40; /* Darker text for better contrast */
+  font-size: 16px;
 }
 
 .container {
-  width: 80%;
-  margin: auto;
-  overflow: hidden;
-  padding: 0 20px;
+  width: 90%;
+  max-width: 1200px; /* Max width for larger screens */
+  margin: 0 auto;
+  padding: 20px 15px;
 }
 
-nav {
-  background: #333;
-  color: #fff;
-  padding: 1rem 0;
-  text-align: center;
-}
-
-nav a {
-  color: #fff;
+a {
+  color: #007bff;
   text-decoration: none;
-  margin: 0 15px;
-  font-size: 1.1rem;
 }
 
-nav a:hover {
-  color: #ddd;
+a:hover {
+  color: #0056b3;
+  text-decoration: underline;
 }
 
-.auth-links button {
-  background: none;
-  border: none;
-  color: #fff;
-  cursor: pointer;
-  font-size: 1.1rem;
-  margin: 0 10px;
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
-
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  padding: 20px;
-  background: #fff;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  max-width: 500px;
-  margin: 20px auto;
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 0.75rem;
+  font-weight: 500;
+  line-height: 1.2;
 }
 
-form label {
-  font-weight: bold;
+h1 { font-size: 2.25rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.5rem; }
+h4 { font-size: 1.2rem; }
+
+ul, ol {
+  padding-left: 20px;
 }
 
-form input, form textarea, form select {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-}
-
-form button {
-  padding: 10px 15px;
-  background: #5cb85c;
-  color: white;
-  border: none;
-  border-radius: 3px;
-  cursor: pointer;
-  font-size: 1rem;
-}
-
-form button:hover {
-  background: #4cae4c;
-}
-
-.error-message {
-  color: red;
-  background: #fdd;
-  padding: 10px;
-  border: 1px solid red;
-  border-radius: 3px;
-  margin-bottom: 10px;
-  text-align: center;
-}
-
-.success-message {
-  color: green;
-  background: #dfd;
-  padding: 10px;
-  border: 1px solid green;
-  border-radius: 3px;
-  margin-bottom: 10px;
-  text-align: center;
-}
-
-.loading-spinner {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100px;
-  font-size: 1.5rem;
-}
-
-/* Basic card for listings */
-.card {
-  background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  padding: 15px;
-  margin-bottom: 15px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.card h3 {
-  margin-top: 0;
-}
-
-/* Add to App.css */
+/* === Navbar === */
 nav {
+  background: #343a40; /* Darker, more modern nav */
+  color: #ffffff;
+  padding: 0.75rem 0; /* Vertical padding */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+nav .container { /* Apply container directly to nav content for better control */
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #333;
-  color: #fff;
-  padding: 0.5rem 2rem; /* Adjusted padding */
-}
-
-nav a {
-  color: #fff;
-  text-decoration: none;
-  margin: 0 10px; /* Reduced margin */
-  font-size: 1rem;
+  padding-top: 0; /* Remove container padding for nav */
+  padding-bottom: 0;
 }
 
 nav .nav-brand a {
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   font-weight: bold;
-  margin-left: 0;
+  color: #ffffff;
+  text-decoration: none;
+}
+nav .nav-brand a:hover {
+  color: #e9ecef;
 }
 
-.nav-links-main {
-  flex-grow: 1;
-  text-align: center; /* Or left, depending on design */
+.nav-links-main a {
+  color: #e9ecef;
+  text-decoration: none;
+  margin: 0 12px;
+  font-size: 1rem;
+  padding: 0.5rem 0;
+  transition: color 0.2s ease-in-out;
+}
+
+.nav-links-main a:hover,
+.nav-links-main a.active { /* For active link styling via NavLink */
+  color: #ffffff;
+  border-bottom: 2px solid #007bff;
 }
 
 .auth-links {
@@ -152,37 +102,340 @@ nav .nav-brand a {
   align-items: center;
 }
 
-.auth-links button {
-  background: #555;
-  border: none;
-  color: #fff;
-  cursor: pointer;
-  font-size: 1rem;
+.auth-links a, .auth-links span {
+  color: #e9ecef;
   margin-left: 15px;
-  padding: 8px 12px;
-  border-radius: 3px;
+  font-size: 0.95rem;
 }
-.auth-links button:hover {
-  background: #777;
+.auth-links a:hover {
+  color: #ffffff;
 }
 
-/* Add to App.css if not already there */
-.info-message {
-  color: #00529B;
-  background-color: #BDE5F8;
-  padding: 10px;
-  border: 1px solid #00529B;
-  border-radius: 3px;
-  margin-bottom: 10px;
+.auth-links button {
+  background: #007bff;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 0.9rem;
+  margin-left: 15px;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.auth-links button:hover {
+  background: #0056b3;
+}
+
+/* === Forms === */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; /* Increased gap */
+  padding: 25px;
+  background: #ffffff;
+  border-radius: 8px; /* Softer radius */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  max-width: 600px; /* Slightly wider forms */
+  margin: 30px auto;
+}
+
+form h2, form h3 {
   text-align: center;
+  color: #343a40;
+}
+
+form label {
+  font-weight: 500; /* Slightly less bold */
+  color: #495057;
+  margin-bottom: 0.25rem; /* Space between label and input */
+  display: block; /* Ensure label is above input */
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+form input[type="tel"],
+form input[type="number"],
+form input[type="date"],
+form textarea,
+form select {
+  width: 100%;
+  padding: 0.75rem; /* More padding */
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+form input:focus,
+form textarea:focus,
+form select:focus {
+  border-color: #80bdff;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+form textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+form button[type="submit"], .button-primary {
+  padding: 0.75rem 1.25rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: background-color 0.2s ease-in-out;
+  margin-top: 0.5rem; /* Space above button */
+}
+
+form button[type="submit"]:hover, .button-primary:hover {
+  background-color: #0056b3;
+}
+form button[type="submit"]:disabled, .button-primary:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+}
+
+form button[type="button"] { /* For secondary actions like "Add Employment" */
+  padding: 0.5rem 1rem;
+  background-color: #6c757d;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.2s ease-in-out;
+}
+form button[type="button"]:hover {
+  background-color: #5a6268;
+}
+
+
+/* === Alert Messages === */
+.alert-message {
+  padding: 1rem;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+.error-message {
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+}
+
+.success-message {
+  color: #155724;
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+}
+
+.info-message {
+  color: #0c5460;
+  background-color: #d1ecf1;
+  border-color: #bee5eb;
 }
 
 .warning-message {
-  color: #9F6000;
-  background-color: #FEEFB3;
-  padding: 10px;
-  border: 1px solid #9F6000;
-  border-radius: 3px;
-  margin-bottom: 10px;
+  color: #856404;
+  background-color: #fff3cd;
+  border-color: #ffeeba;
+}
+
+/* === Loading Spinner === */
+.loading-spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  font-size: 1.2rem;
+  color: #6c757d;
+}
+/* You can replace text with an actual CSS spinner later */
+
+/* === Cards (for listings like properties, applications, etc.) === */
+.card {
+  background: #ffffff;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  padding: 1.25rem; /* More padding */
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+.card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.card h3, .card h4 {
+  margin-top: 0;
+  color: #007bff; /* Make card titles stand out */
+}
+.card h4 {
+    font-size: 1.1rem;
+    color: #343a40;
+}
+
+.card p {
+  margin-bottom: 0.5rem;
+  color: #495057;
+  font-size: 0.95rem;
+}
+.card p strong {
+    color: #343a40;
+}
+
+.card a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 500;
+}
+.card a:hover {
+  text-decoration: underline;
+}
+
+.card .button-like, .button-link { /* For action links within cards */
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: #007bff;
+  color: white !important; /* Ensure text color is white */
+  text-decoration: none !important;
+  border-radius: 4px;
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
+  font-size: 0.9rem;
+  transition: background-color 0.2s ease-in-out;
+}
+.card .button-like:hover, .button-link:hover {
+  background-color: #0056b3;
+  text-decoration: none !important;
+}
+
+/* === Tables === */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+table th,
+table td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #dee2e6;
+  font-size: 0.9rem;
+}
+
+table thead th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #dee2e6;
+  background-color: #f8f9fa;
+  color: #495057;
+  font-weight: 500;
+}
+
+table tbody tr:nth-of-type(even) {
+  background-color: rgba(0, 0, 0, 0.025);
+}
+table tbody tr:hover {
+  background-color: rgba(0, 123, 255, 0.05);
+}
+
+/* === Utility Classes === */
+.text-center {
   text-align: center;
+}
+.mt-1 { margin-top: 0.25rem; }
+.mt-2 { margin-top: 0.5rem; }
+.mt-3 { margin-top: 1rem; }
+.mt-4 { margin-top: 1.5rem; }
+.mt-5 { margin-top: 3rem; }
+
+.mb-1 { margin-bottom: 0.25rem; }
+.mb-2 { margin-bottom: 0.5rem; }
+.mb-3 { margin-bottom: 1rem; }
+.mb-4 { margin-bottom: 1.5rem; }
+.mb-5 { margin-bottom: 3rem; }
+
+.d-flex { display: flex; }
+.justify-content-between { justify-content: space-between; }
+.align-items-center { align-items: center; }
+
+/* === Specific Page Adjustments (Examples) === */
+.profile-page-container .profile-form,
+.profile-page-container .password-form {
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+}
+.profile-page-container h3 {
+  margin-bottom: 15px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+
+/* Grid for property listings */
+.properties-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive grid */
+  gap: 1.5rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .container {
+    width: 95%;
+  }
+  nav .container {
+    flex-direction: column;
+    padding: 0.5rem 1rem;
+  }
+  nav .nav-brand a {
+    margin-bottom: 0.5rem;
+  }
+  .nav-links-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  .nav-links-main a {
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    width: 100%;
+    text-align: center;
+  }
+  .nav-links-main a.active, .nav-links-main a:hover {
+    border-bottom: none;
+    background-color: rgba(255,255,255,0.1);
+    border-radius: 4px;
+  }
+  .auth-links {
+    margin-top: 0.5rem;
+    width: 100%;
+    justify-content: center;
+  }
+  .auth-links a, .auth-links button {
+    margin: 0.5rem 5px;
+  }
+
+  .properties-grid {
+    grid-template-columns: 1fr; /* Stack cards on smaller screens */
+  }
+  form {
+    padding: 15px;
+  }
 }
