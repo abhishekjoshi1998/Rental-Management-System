@@ -5,7 +5,7 @@ import PrivateRoute from "./components/Common/PrivateRoute";
 
 import HomePage from "./pages/HomePage";
 import LoginPage from "./components/Auth/LoginPage";
-//import RegisterPage from "./components/Auth/RegisterForm";
+import RegisterPage from "./components/Auth/RegisterForm";
 import ForgotPasswordPage from "./components/Auth/ForgotPasswordPage"; 
 import ResetPasswordPage from "./components/Auth/ResetPasswordPage"; 
 
@@ -52,7 +52,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<LoginPage />} />
-        {/* <Route path="/register" element={<RegisterPage />} /> */}
+        <Route path="/register" element={<RegisterPage />} />
         <Route path="/forgot-password" element={<ForgotPasswordPage />} />
         <Route path="/reset-password/:token" element={<ResetPasswordPage />} />
         <Route path="/unauthorized" element={<UnauthorizedPage />} />
