@@ -94,7 +94,7 @@ const PropertiesListPage = () => {
         </div>
       )}
 
-      {!loading && properties.length === 0 && !error && ( // Check !loading here to avoid showing "No properties" during load
+      {!loading && properties.length === 0 && !error && ( 
         <p>No properties currently available matching your criteria.</p>
       )}
 
