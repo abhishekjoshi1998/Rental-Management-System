@@ -1,0 +1,9 @@
+{"level":"info","message":"Server running in development mode on port 5000","service":"rental-management-system","timestamp":"2025-05-29 18:14:07"}
+{"level":"info","message":"Connected to Redis","service":"rental-management-system","timestamp":"2025-05-29 18:14:07"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"rental-management-system","timestamp":"2025-05-29 18:14:07"}
+{"level":"info","message":"Server running in development mode on port 5000","service":"rental-management-system","timestamp":"2025-05-29 18:15:10"}
+{"level":"info","message":"Connected to Redis","service":"rental-management-system","timestamp":"2025-05-29 18:15:10"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"rental-management-system","timestamp":"2025-05-29 18:15:11"}
+{"level":"info","message":"Server running in development mode on port 5000","service":"rental-management-system","timestamp":"2025-05-29 18:15:31"}
+{"level":"info","message":"Connected to Redis","service":"rental-management-system","timestamp":"2025-05-29 18:15:31"}
+{"level":"info","message":"MongoDB Connected: localhost","service":"rental-management-system","timestamp":"2025-05-29 18:15:31"}
