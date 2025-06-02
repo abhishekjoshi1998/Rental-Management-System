@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { submitNewApplication } from '../../api/applicationService';
 import AlertMessage from '../Common/AlertMessage.jsx'; 

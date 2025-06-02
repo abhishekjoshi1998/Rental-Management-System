@@ -1,5 +1,4 @@
 import React from 'react';
-
 const AlertMessage = ({ type, message }) => {
   const baseClass = 'alert-message';
   let typeClass = '';
